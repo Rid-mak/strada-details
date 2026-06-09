@@ -1342,8 +1342,10 @@ footer { background: var(--rock); }
   .prod-sub    { font-size: 14px; }
   .prod-ticker {
     font-size: 10px; margin: 32px 0 40px;
-    white-space: nowrap; overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: normal;
+    overflow: hidden;
+    max-width: 100%;
+    line-height: 1.8;
   }
   .prod-list   { grid-template-columns: repeat(2,1fr); }
   .prod-img-area { aspect-ratio: 1/1; padding: 10px; }
