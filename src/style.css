@@ -1228,22 +1228,131 @@ nav.stuck .nav-inner { padding: 14px 0; }
 .p-step:hover .p-title { color: var(--gold); }
 .p-desc { font-size: 1.05rem; line-height: 1.8; color: var(--muted); }
 
-/* ─── CTA ─────────────────────────────────────────────── */
+/* ─── BOOKING FORM ────────────────────────────────────── */
 #cta {
   padding: 120px 48px;
   border-bottom: 1px solid var(--border);
 }
 @media(max-width:768px) { #cta { padding: 80px 24px; } }
-.cta-inner {
-  max-width: 1200px; margin: 0 auto;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 0; align-items: center;
-}
-@media(max-width:768px) { .cta-inner { grid-template-columns: 1fr; gap: 48px; } }
-.cta-left { padding-right: 80px; border-right: 1px solid var(--border); }
-@media(max-width:768px) { .cta-left { padding-right: 0; border-right: none; border-bottom: 1px solid var(--border); padding-bottom: 48px; } }
-.cta-right { padding-left: 80px; display: flex; flex-direction: column; gap: 24px; }
-@media(max-width:768px) { .cta-right { padding-left: 0; padding-top: 48px; } }
 
+.book-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1.15fr; gap: 0; align-items: start;
+}
+@media(max-width:900px) { .book-inner { grid-template-columns: 1fr; } }
+
+/* Left */
+.book-left {
+  padding-right: 80px; border-right: 1px solid var(--border);
+  padding-top: 8px;
+}
+@media(max-width:900px) {
+  .book-left { padding-right: 0; border-right: none; border-bottom: 1px solid var(--border); padding-bottom: 56px; margin-bottom: 56px; }
+}
+
+.book-intro {
+  font-size: 1.05rem; line-height: 1.85; color: var(--muted);
+  max-width: 380px; margin-bottom: 48px;
+}
+
+.book-meta-list { display: flex; flex-direction: column; gap: 0; }
+.book-meta-item {
+  display: grid; grid-template-columns: 110px 1fr;
+  padding: 18px 0; border-top: 1px solid var(--border);
+  gap: 16px; align-items: start;
+}
+.book-meta-item:last-child { border-bottom: 1px solid var(--border); }
+.book-meta-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .68rem; letter-spacing: .22em; text-transform: uppercase;
+  color: var(--gold); padding-top: 2px;
+}
+.book-meta-val {
+  font-family: 'Syne', sans-serif; font-weight: 600;
+  font-size: 1rem; color: var(--text); letter-spacing: -.01em;
+}
+
+/* Right / form */
+.book-right { padding-left: 80px; }
+@media(max-width:900px) { .book-right { padding-left: 0; } }
+
+.book-form { display: flex; flex-direction: column; gap: 20px; }
+
+.book-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+}
+@media(max-width:560px) { .book-row { grid-template-columns: 1fr; } }
+
+.book-field { display: flex; flex-direction: column; gap: 8px; }
+
+.book-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .65rem; letter-spacing: .22em; text-transform: uppercase;
+  color: var(--muted);
+}
+
+.book-input {
+  background: rgba(237,228,208,.04);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: 'Karla', sans-serif; font-size: 1rem; font-weight: 300;
+  padding: 13px 16px;
+  outline: none;
+  transition: border-color .2s, background .2s;
+  width: 100%; box-sizing: border-box;
+  appearance: none; -webkit-appearance: none;
+}
+.book-input::placeholder { color: rgba(237,228,208,.2); }
+.book-input:focus { border-color: var(--gold); background: rgba(201,170,124,.05); }
+
+.book-select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c9aa7c' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+}
+.book-select option { background: #0e0d0b; color: var(--text); }
+
+.book-textarea { resize: none; line-height: 1.7; }
+
+/* Submit button */
+.book-submit {
+  display: grid; grid-template-columns: 1fr auto;
+  align-items: center;
+  background: var(--gold); border: none; cursor: pointer;
+  padding: 0; margin-top: 4px;
+  transition: background .2s;
+}
+.book-submit:hover { background: var(--gold-hi); }
+.book-submit-label {
+  font-family: 'Syne', sans-serif; font-weight: 700;
+  font-size: .92rem; letter-spacing: .15em; text-transform: uppercase;
+  color: var(--void); padding: 17px 28px; text-align: left;
+}
+.book-submit-icon {
+  width: 54px; height: 54px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(0,0,0,.15);
+  font-size: 1.1rem; color: var(--void);
+  transition: transform .3s;
+}
+.book-submit:hover .book-submit-icon { transform: rotate(-45deg); }
+.book-submit:disabled { opacity: .5; cursor: not-allowed; }
+.book-submit:disabled .book-submit-icon { transform: none; }
+
+.book-disclaimer {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .65rem; letter-spacing: .16em; text-transform: uppercase;
+  color: rgba(237,228,208,.18); text-align: center;
+}
+.book-sent-msg {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .72rem; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--gold); text-align: center; margin-top: -8px;
+}
+
+/* Keep old btn-wa for floating WA button fallback */
 .btn-wa {
   display: inline-flex; align-items: center; gap: 14px;
   padding: 16px 32px; background: #25D366; color: #fff;
@@ -1254,10 +1363,17 @@ nav.stuck .nav-inner { padding: 14px 0; }
 .btn-wa:hover { background: #20bc5a; transform: translateY(-2px); }
 .btn-wa svg { width: 20px; height: 20px; flex-shrink: 0; }
 
-.cta-meta {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 1.05rem; letter-spacing: .2em; text-transform: uppercase; color: var(--muted);
-  line-height: 1.8;
+/* mobile overrides */
+@media(max-width:480px) {
+  #cta { padding: 56px 18px; }
+  .book-left { padding-bottom: 36px; margin-bottom: 36px; }
+  .book-intro { font-size: 14px; margin-bottom: 28px; }
+  .book-meta-label { font-size: 10px; }
+  .book-meta-val { font-size: 14px; }
+  .book-meta-item { grid-template-columns: 90px 1fr; padding: 14px 0; }
+  .book-input { font-size: 15px; padding: 11px 14px; }
+  .book-submit-label { font-size: 12px; padding: 15px 20px; letter-spacing: .1em; }
+  .book-submit-icon { width: 46px; height: 46px; font-size: 1rem; }
 }
 
 /* ─── FOOTER ──────────────────────────────────────────── */

@@ -296,6 +296,47 @@ function initBASlider(sliderId, beforeId, handleId) {
 initBASlider('baSlider',  'baBefore',  'baHandle');
 initBASlider('baSlider2', 'baBefore2', 'baHandle2');
 
+// ─── BOOKING FORM → WHATSAPP ──────────────────────────────
+const bookForm   = document.getElementById('bookForm');
+const bookSubmit = document.getElementById('bookSubmit');
+const bookLabel  = document.getElementById('bookSubmitLabel');
+
+if (bookForm) {
+  bookForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const fd         = new FormData(bookForm);
+    const firstName  = (fd.get('first_name') || '').trim();
+    const lastName   = (fd.get('last_name')  || '').trim();
+    const phone      = (fd.get('phone')      || '').trim();
+    const service    = (fd.get('service')    || '').trim();
+    const vehicle    = (fd.get('vehicle')    || '').trim();
+    const message    = (fd.get('message')    || '').trim();
+
+    const msg =
+      `🚗 *New Booking Request — Strada Details*\n\n` +
+      `👤 *Name:* ${firstName} ${lastName}\n` +
+      `📞 *Phone:* ${phone}\n` +
+      `🔧 *Service:* ${service || 'Not specified'}\n` +
+      `🚘 *Vehicle:* ${vehicle || 'Not specified'}\n` +
+      (message ? `\n📝 *Notes:*\n${message}\n` : '') +
+      `\nLooking forward to hearing from you! 🙏`;
+
+    // Show sent state briefly
+    bookSubmit.disabled = true;
+    bookLabel.textContent = 'Opening WhatsApp…';
+
+    setTimeout(() => {
+      window.open('https://wa.me/23057000000?text=' + encodeURIComponent(msg), '_blank');
+      bookLabel.textContent = 'Sent ✓ — we\'ll reply shortly';
+      setTimeout(() => {
+        bookSubmit.disabled = false;
+        bookLabel.textContent = 'Send via WhatsApp';
+        bookForm.reset();
+      }, 4000);
+    }, 400);
+  });
+}
+
 // ─── SMOOTH ANCHOR LINKS ──────────────────────────────────
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {

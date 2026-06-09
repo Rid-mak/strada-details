@@ -505,30 +505,90 @@
    </div>
   </section>
 
-  <!-- ── CTA ───────────────────────────────────────────── -->
+  <!-- ── BOOKING FORM ──────────────────────────────────── -->
   <section id="cta">
-   <div class="cta-inner">
-    <div class="cta-left rv-l">
-      <div class="chip"><span class="chip-dot"></span> Get in Touch</div>
-      <h2 class="big-head">Ready to<br><em>Transform</em><br>Your Car?</h2>
-    </div>
-    <div class="cta-right rv-r" style="transition-delay:.15s">
-      <p class="about-body">
-        Message us directly on WhatsApp — <strong>fast, easy, no forms</strong>.
-        We'll get your booking sorted right away.
-      </p>
-      <a class="btn-wa" href="https://wa.me/23000000000?text=Hi%20Strada%20Details%2C%20I'd%20like%20to%20book%20a%20detail" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Chat on WhatsApp
-      </a>
-      <p class="cta-meta">
-        Strada Details · Mauritius<br>
-        Available Mon – Sat · Fast response guaranteed
-      </p>
-    </div>
-   </div>
-  </section>
+    <div class="book-inner">
 
+      <!-- LEFT: heading + contact details -->
+      <div class="book-left rv-l">
+        <div class="chip"><span class="chip-dot"></span> Get in Touch</div>
+        <h2 class="big-head">Book Your<br><em>Detail</em></h2>
+        <p class="book-intro">Ready to restore your vehicle? Fill in the form and we'll get back to you on WhatsApp — fast, personal, no waiting.</p>
+
+        <div class="book-meta-list">
+          <div class="book-meta-item">
+            <span class="book-meta-label">LOCATION</span>
+            <span class="book-meta-val">Mauritius, Indian Ocean</span>
+          </div>
+          <div class="book-meta-item">
+            <span class="book-meta-label">WHATSAPP</span>
+            <span class="book-meta-val">+230 5700 0000</span>
+          </div>
+          <div class="book-meta-item">
+            <span class="book-meta-label">HOURS</span>
+            <span class="book-meta-val">Mon – Sat · 8 am – 6 pm</span>
+          </div>
+          <div class="book-meta-item">
+            <span class="book-meta-label">RESPONSE</span>
+            <span class="book-meta-val">Within 24 hours</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: form -->
+      <div class="book-right rv-r" style="transition-delay:.15s">
+        <form class="book-form" id="bookForm" novalidate>
+
+          <div class="book-row">
+            <div class="book-field">
+              <label class="book-label">FIRST NAME</label>
+              <input class="book-input" name="first_name" type="text" placeholder="John" required>
+            </div>
+            <div class="book-field">
+              <label class="book-label">LAST NAME</label>
+              <input class="book-input" name="last_name" type="text" placeholder="Doe" required>
+            </div>
+          </div>
+
+          <div class="book-field">
+            <label class="book-label">WHATSAPP / PHONE</label>
+            <input class="book-input" name="phone" type="tel" placeholder="+230 5XXX XXXX" required>
+          </div>
+
+          <div class="book-row">
+            <div class="book-field">
+              <label class="book-label">SERVICE</label>
+              <select class="book-input book-select" name="service" required>
+                <option value="" disabled selected>Select…</option>
+                <option>Full Wash &amp; Detail</option>
+                <option>Ceramic Coating</option>
+                <option>Paint Correction</option>
+                <option>Interior Detail</option>
+                <option>Multiple Services</option>
+              </select>
+            </div>
+            <div class="book-field">
+              <label class="book-label">VEHICLE</label>
+              <input class="book-input" name="vehicle" type="text" placeholder="e.g. Toyota Yaris 2021">
+            </div>
+          </div>
+
+          <div class="book-field">
+            <label class="book-label">TELL US MORE</label>
+            <textarea class="book-input book-textarea" name="message" placeholder="Condition of the vehicle, any specific concerns, preferred date…" rows="4"></textarea>
+          </div>
+
+          <button class="book-submit" type="submit" id="bookSubmit">
+            <span class="book-submit-label" id="bookSubmitLabel">Send via WhatsApp</span>
+            <span class="book-submit-icon">→</span>
+          </button>
+
+          <p class="book-disclaimer">All enquiries handled with care and discretion.</p>
+        </form>
+      </div>
+
+    </div>
+  </section>
   <!-- ── FOOTER ─────────────────────────────────────────── -->
   <footer>
    <div class="foot-top-wrap">
