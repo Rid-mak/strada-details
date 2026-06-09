@@ -31,15 +31,21 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 // ─── MOBILE NAV ──────────────────────────────────────────
-const ham    = document.getElementById('ham');
-const mobNav = document.getElementById('mob-nav');
+const ham        = document.getElementById('ham');
+const mobNav     = document.getElementById('mob-nav');
+const mobNavClose= document.getElementById('mobNavClose');
+
+function closeMenu() {
+  ham.classList.remove('x');
+  mobNav.classList.remove('open');
+}
+
 ham.addEventListener('click', () => {
   ham.classList.toggle('x');
   mobNav.classList.toggle('open');
 });
-document.querySelectorAll('.mm-l').forEach(l => l.addEventListener('click', () => {
-  ham.classList.remove('x'); mobNav.classList.remove('open');
-}));
+mobNavClose.addEventListener('click', closeMenu);
+document.querySelectorAll('.mm-l').forEach(l => l.addEventListener('click', closeMenu));
 
 // ─── VIDEO PLAY ───────────────────────────────────────────
 const heroVid = document.querySelector('.hero-vid');
