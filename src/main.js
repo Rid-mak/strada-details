@@ -231,11 +231,13 @@ function smoothScrollTo(targetY, duration) {
 }
 
 viewLessBtn.addEventListener('click', () => {
-  visibleCount = PAGE_SIZE;
-  applyPagination();
   const target = document.getElementById('products');
   const top = target.getBoundingClientRect().top + window.scrollY - 80;
   smoothScrollTo(top, 900);
+  setTimeout(() => {
+    visibleCount = PAGE_SIZE;
+    applyPagination();
+  }, 920);
 });
 
 // Init
