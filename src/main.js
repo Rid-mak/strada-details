@@ -160,33 +160,70 @@ function renderCart() {
   updateCardButtons();
 }
 
-// ─── PRODUCT FILTER ──────────────────────────────────────
-const filterBtns = document.querySelectorAll('.prod-filter-btn');
-const prodCards  = document.querySelectorAll('.prod-card');
-const prodShowing = document.getElementById('prodShowing');
-const prodEmpty  = document.getElementById('prodEmpty');
+// ─── PRODUCT FILTER + PAGINATION ─────────────────────────
+const filterBtns   = document.querySelectorAll('.prod-filter-btn');
+const prodCards    = document.querySelectorAll('.prod-card');
+const prodShowing  = document.getElementById('prodShowing');
+const prodEmpty    = document.getElementById('prodEmpty');
+const viewMoreBtn  = document.getElementById('prodViewMore');
+const viewLessBtn  = document.getElementById('prodViewLess');
+const PAGE_SIZE    = 4;
+
+let currentFilter  = 'all';
+let visibleCount   = PAGE_SIZE; // how many to show in current filter
+
+function getMatchingCards() {
+  return [...prodCards].filter(c =>
+    currentFilter === 'all' || c.dataset.cat === currentFilter
+  );
+}
+
+function applyPagination() {
+  const matching = getMatchingCards();
+  const total    = matching.length;
+
+  // Hide all cards first
+  prodCards.forEach(c => { c.style.display = 'none'; c.classList.remove('filtered-out'); });
+
+  // Show up to visibleCount of matching
+  matching.slice(0, visibleCount).forEach(c => { c.style.display = ''; });
+
+  const showing = Math.min(visibleCount, total);
+  if (prodShowing) prodShowing.textContent = `Showing ${showing} of ${total} product${total !== 1 ? 's' : ''}`;
+  if (prodEmpty)   prodEmpty.style.display = total === 0 ? 'block' : 'none';
+
+  // View More / Less visibility
+  viewMoreBtn.style.display = showing < total   ? '' : 'none';
+  viewLessBtn.style.display = visibleCount > PAGE_SIZE ? '' : 'none';
+}
 
 filterBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     filterBtns.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    const filter = btn.dataset.filter;
-    let visible = 0;
-    prodCards.forEach(card => {
-      const match = filter === 'all' || card.dataset.cat === filter;
-      if (match) {
-        card.style.display = '';
-        card.classList.remove('filtered-out');
-        visible++;
-      } else {
-        card.classList.add('filtered-out');
-        setTimeout(() => { if (card.classList.contains('filtered-out')) card.style.display = 'none'; }, 300);
-      }
-    });
-    if (prodShowing) prodShowing.textContent = `Showing ${visible} product${visible !== 1 ? 's' : ''}`;
-    if (prodEmpty) prodEmpty.style.display = visible === 0 ? 'block' : 'none';
+    currentFilter = btn.dataset.filter;
+    visibleCount  = PAGE_SIZE;
+    applyPagination();
   });
 });
+
+viewMoreBtn.addEventListener('click', () => {
+  visibleCount += PAGE_SIZE;
+  applyPagination();
+  // Scroll to newly revealed cards
+  const matching = getMatchingCards();
+  const nextCard = matching[visibleCount - PAGE_SIZE];
+  if (nextCard) nextCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+});
+
+viewLessBtn.addEventListener('click', () => {
+  visibleCount = PAGE_SIZE;
+  applyPagination();
+  document.getElementById('products').scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
+
+// Init
+applyPagination();
 
 // Add to cart buttons
 document.querySelectorAll('.add-to-cart').forEach(btn => {

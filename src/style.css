@@ -868,6 +868,26 @@ nav.stuck .nav-inner { padding: 14px 0; }
 .prod-add-btn:hover { background: var(--gold-hi); }
 .prod-add-btn.in-cart { background: #1a1a1c; color: var(--gold); border: 1px solid var(--gold); }
 
+/* ── Pagination ── */
+.prod-pagination {
+  display: flex; align-items: center; gap: 2px;
+  margin-top: 2px; border-top: 1px solid var(--border);
+  padding-top: 24px;
+}
+.prod-page-btn {
+  font-family: 'Syne', sans-serif; font-size: .8rem; font-weight: 700;
+  letter-spacing: .15em; text-transform: uppercase;
+  background: none; border: 1px solid var(--border);
+  color: var(--muted); padding: 12px 28px; cursor: pointer;
+  transition: background .2s, color .2s, border-color .2s;
+}
+.prod-page-btn:hover { background: var(--gold); color: var(--void); border-color: var(--gold); }
+.prod-page-btn--less { border-color: transparent; color: var(--muted); }
+.prod-page-btn--less:hover { background: none; color: var(--text); border-color: var(--border); }
+@media(max-width:480px) {
+  .prod-page-btn { font-size: 10px; padding: 10px 18px; }
+}
+
 /* ── CART ─────────────────────────────────────────────── */
 .cart-overlay {
   position: fixed; inset: 0; background: rgba(0,0,0,.65);
