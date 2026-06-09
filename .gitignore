@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.claude/
+*.log
+ffmpeg_v2.log
+SaveClip*
