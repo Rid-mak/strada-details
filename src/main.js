@@ -160,6 +160,34 @@ function renderCart() {
   updateCardButtons();
 }
 
+// ─── PRODUCT FILTER ──────────────────────────────────────
+const filterBtns = document.querySelectorAll('.prod-filter-btn');
+const prodCards  = document.querySelectorAll('.prod-card');
+const prodShowing = document.getElementById('prodShowing');
+const prodEmpty  = document.getElementById('prodEmpty');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    let visible = 0;
+    prodCards.forEach(card => {
+      const match = filter === 'all' || card.dataset.cat === filter;
+      if (match) {
+        card.style.display = '';
+        card.classList.remove('filtered-out');
+        visible++;
+      } else {
+        card.classList.add('filtered-out');
+        setTimeout(() => { if (card.classList.contains('filtered-out')) card.style.display = 'none'; }, 300);
+      }
+    });
+    if (prodShowing) prodShowing.textContent = `Showing ${visible} product${visible !== 1 ? 's' : ''}`;
+    if (prodEmpty) prodEmpty.style.display = visible === 0 ? 'block' : 'none';
+  });
+});
+
 // Add to cart buttons
 document.querySelectorAll('.add-to-cart').forEach(btn => {
   btn.addEventListener('click', () => {

@@ -216,7 +216,7 @@
    </div>
   </div>
 
-  <!-- ── PRODUCTS ─────────────────────────────────────── -->
+  <!-- ── PRODUCTS ────────────────────────────────────── -->
   <section id="products">
     <div class="prod-wrap">
       <div class="prod-head rv">
@@ -224,93 +224,174 @@
         <h2 class="big-head">Detail<br><em>Products</em></h2>
         <p class="prod-sub">Professional-grade detailing products available to order. Delivery across Mauritius — order via WhatsApp.</p>
       </div>
-      <div class="prod-ticker rv">DELIVERY ACROSS MAURITIUS — ORDER VIA WHATSAPP — PROFESSIONAL GRADE — STRADA DETAILS</div>
-      <div class="prod-list rv" style="transition-delay:.1s">
 
-        <div class="prod-card" data-name="Ceramic Coating Kit" data-size="50 ml" data-code="P-01" data-price="1800">
-          <div class="prod-img-area">
-            <div class="prod-img-meta">
-              <span class="prod-code">P-01</span>
-              <span class="prod-badge">Bestseller</span>
-            </div>
-            <div class="prod-img-center">
-              <span class="prod-brand-wm">STRADA<br>DETAILS</span>
-            </div>
-          </div>
-          <div class="prod-info">
-            <h3 class="prod-name">CERAMIC COATING KIT</h3>
-            <p class="prod-desc">Professional SiO₂ nano-ceramic formula. Bonds to paint for hydrophobic protection lasting 2–5 years.</p>
-            <span class="prod-size-line">50 ml</span>
-          </div>
-          <div class="prod-foot">
-            <span class="prod-price">Rs 1,800</span>
-            <button class="prod-add-btn add-to-cart">Add to order →</button>
-          </div>
+      <div class="prod-filter-bar rv">
+        <button class="prod-filter-btn active" data-filter="all">All <span class="pf-count">24</span></button>
+        <button class="prod-filter-btn" data-filter="protection">Protection <span class="pf-count">6</span></button>
+        <button class="prod-filter-btn" data-filter="exterior">Exterior <span class="pf-count">5</span></button>
+        <button class="prod-filter-btn" data-filter="interior">Interior <span class="pf-count">5</span></button>
+        <button class="prod-filter-btn" data-filter="tools">Tools <span class="pf-count">5</span></button>
+        <button class="prod-filter-btn" data-filter="bundles">Bundles <span class="pf-count">3</span></button>
+      </div>
+
+      <div class="prod-meta-bar rv" style="transition-delay:.05s">
+        <span class="prod-showing" id="prodShowing">Showing 24 products</span>
+        <span class="prod-ticker-inline">DELIVERY ACROSS MAURITIUS · ORDER VIA WHATSAPP · PROFESSIONAL GRADE · STRADA DETAILS</span>
+      </div>
+
+      <div class="prod-list rv" id="prodList" style="transition-delay:.1s">
+
+        <div class="prod-card" data-cat="protection" data-name="Ceramic Coating Kit" data-size="50 ml" data-code="P-01" data-price="1800">
+          <div class="prod-img-area"><div class="prod-img-meta"><span class="prod-code">P-01</span><span class="prod-badge">Bestseller</span></div><div class="prod-img-center"><span class="prod-brand-wm">STRADA<br>DETAILS</span></div><span class="prod-cat-tag">Protection</span></div>
+          <div class="prod-info"><h3 class="prod-name">CERAMIC COATING KIT</h3><p class="prod-desc">Professional SiO₂ nano-ceramic formula. Bonds to paint for hydrophobic protection lasting 2–5 years.</p><span class="prod-size-line">50 ml</span></div>
+          <div class="prod-foot"><span class="prod-price">Rs 1,800</span><button class="prod-add-btn add-to-cart">Add to order →</button></div>
         </div>
 
-        <div class="prod-card" data-name="Spray Detailer" data-size="500 ml" data-code="P-02" data-price="650">
-          <div class="prod-img-area">
-            <div class="prod-img-meta">
-              <span class="prod-code">P-02</span>
-              <span class="prod-badge new">New</span>
-            </div>
-            <div class="prod-img-center">
-              <span class="prod-brand-wm">STRADA<br>DETAILS</span>
-            </div>
-          </div>
-          <div class="prod-info">
-            <h3 class="prod-name">SPRAY DETAILER</h3>
-            <p class="prod-desc">Quick-detailer spray for a streak-free shine between washes. Lifts dust, enhances gloss.</p>
-            <span class="prod-size-line">500 ml</span>
-          </div>
-          <div class="prod-foot">
-            <span class="prod-price">Rs 650</span>
-            <button class="prod-add-btn add-to-cart">Add to order →</button>
-          </div>
+        <div class="prod-card" data-cat="protection" data-name="Paint Sealant" data-size="250 ml" data-code="P-05" data-price="950">
+          <div class="prod-img-area"><div class="prod-img-meta"><span class="prod-code">P-05</span></div><div class="prod-img-center"><span class="prod-brand-wm">STRADA<br>DETAILS</span></div><span class="prod-cat-tag">Protection</span></div>
+          <div class="prod-info"><h3 class="prod-name">PAINT SEALANT</h3><p class="prod-desc">Synthetic polymer sealant. Delivers 6-month protection and mirror gloss bonded to paintwork.</p><span class="prod-size-line">250 ml</span></div>
+          <div class="prod-foot"><span class="prod-price">Rs 950</span><button class="prod-add-btn add-to-cart">Add to order →</button></div>
         </div>
 
-        <div class="prod-card" data-name="Car Shampoo" data-size="1 L" data-code="P-03" data-price="450">
-          <div class="prod-img-area">
-            <div class="prod-img-meta">
-              <span class="prod-code">P-03</span>
-            </div>
-            <div class="prod-img-center">
-              <span class="prod-brand-wm">STRADA<br>DETAILS</span>
-            </div>
-          </div>
-          <div class="prod-info">
-            <h3 class="prod-name">CAR SHAMPOO</h3>
-            <p class="prod-desc">High-foam pH-neutral shampoo. Cleans without stripping wax or ceramic coatings.</p>
-            <span class="prod-size-line">1 L</span>
-          </div>
-          <div class="prod-foot">
-            <span class="prod-price">Rs 450</span>
-            <button class="prod-add-btn add-to-cart">Add to order →</button>
-          </div>
+        <div class="prod-card" data-cat="protection" data-name="Carnauba Wax" data-size="200 g" data-code="P-06" data-price="750">
+          <div class="prod-img-area"><div class="prod-img-meta"><span class="prod-code">P-06</span><span class="prod-badge new">New</span></div><div class="prod-img-center"><span class="prod-brand-wm">STRADA<br>DETAILS</span></div><span class="prod-cat-tag">Protection</span></div>
+          <div class="prod-info"><h3 class="prod-name">CARNAUBA WAX</h3><p class="prod-desc">Pure Brazilian carnauba blend. Warm depth, water beading and 3-month protection.</p><span class="prod-size-line">200 g</span></div>
+          <div class="prod-foot"><span class="prod-price">Rs 750</span><button class="prod-add-btn add-to-cart">Add to order →</button></div>
         </div>
 
-        <div class="prod-card" data-name="Microfibre Kit" data-size="Pack of 5" data-code="P-04" data-price="350">
-          <div class="prod-img-area">
-            <div class="prod-img-meta">
-              <span class="prod-code">P-04</span>
-              <span class="prod-badge limited">Limited</span>
-            </div>
-            <div class="prod-img-center">
-              <span class="prod-brand-wm">STRADA<br>DETAILS</span>
-            </div>
-          </div>
-          <div class="prod-info">
-            <h3 class="prod-name">MICROFIBRE KIT</h3>
-            <p class="prod-desc">Ultra-soft 400 GSM microfibre cloths — paint-safe, scratch-free. For drying and buffing.</p>
-            <span class="prod-size-line">Pack of 5</span>
-          </div>
-          <div class="prod-foot">
-            <span class="prod-price">Rs 350</span>
-            <button class="prod-add-btn add-to-cart">Add to order →</button>
-          </div>
+        <div class="prod-card" data-cat="protection" data-name="Glass Coating" data-size="30 ml" data-code="P-07" data-price="1200">
+          <div class="prod-img-area"><div class="prod-img-meta"><span class="prod-code">P-07</span></div><div class="prod-img-center"><span class="prod-brand-wm">STRADA<br>DETAILS</span></div><span class="prod-cat-tag">Protection</span></div>
+          <div class="prod-info"><h3 class="prod-name">GLASS COATING</h3><p class="prod-desc">Nano-silica treatment for windscreens. Repels rain, reduces glare, enhances visibility.</p><span class="prod-size-line">30 ml</span></div>
+          <div class="prod-foot"><span class="prod-price">Rs 1,200</span><button class="prod-add-btn add-to-cart">Add to order →</button></div>
+        </div>
+
+        <div class="prod-card" data-cat="protection" data-name="Wheel Sealant" data-size="150 ml" data-code="P-08" data-price="680">
+          <div class="prod-img-area"><div class="prod-img-meta"><span class="prod-code">P-08</span></div><div class="prod-img-center"><span class="prod-brand-wm">STRADA<br>DETAILS</span></div><span class="prod-cat-tag">Protection</span></div>
+          <div class="prod-info"><h3 class="prod-name">WHEEL SEALANT</h3><p class="prod-desc">High-heat resistant sealant for alloy wheels. Repels brake dust and road grime for months.</p><span class="prod-size-line">150 ml</span></div>
+          <div class="prod-foot"><span class="prod-price">Rs 680</span><button class="prod-add-btn add-to-cart">Add to order →</button></div>
+        </div>
+
+        <div class="prod-card" data-cat="protection" data-name="Tyre Dressing" data-size="500 ml" data-code="P-09" data-price="420">
+          <div class="prod-img-area"><div class="prod-img-meta"><span class="prod-code">P-09</span><span class="prod-badge limited">Limited</span></div><div class="prod-img-center"><span class="prod-brand-wm">STRADA<br>DETAILS</span></div><span class="prod-cat-tag">Protection</span></div>
+          <div class="prod-info"><h3 class="prod-name">TYRE DRESSING</h3><p class="prod-desc">Water-based satin dressing. Conditions rubber, restores deep black finish without sling.</p><span class="prod-size-line">500 ml</span></div>
+          <div class="prod-foot"><span class="prod-price">Rs 420</span><button class="prod-add-btn add-to-cart">Add to order →</button></div>
+        </div>
+
+        <div class="prod-card" data-cat="exterior" data-name="Spray Detailer" data-size="500 ml" data-code="P-02" data-price="650">
+          <div class="prod-img-area"><div class="prod-img-meta"><span class="prod-code">P-02</span><span class="prod-badge new">New</span></div><div class="prod-img-center"><span class="prod-brand-wm">STRADA<br>DETAILS</span></div><span class="prod-cat-tag">Exterior</span></div>
+          <div class="prod-info"><h3 class="prod-name">SPRAY DETAILER</h3><p class="prod-desc">Quick-detailer spray for a streak-free shine between washes. Lifts dust, enhances gloss.</p><span class="prod-size-line">500 ml</span></div>
+          <div class="prod-foot"><span class="prod-price">Rs 650</span><button class="prod-add-btn add-to-cart">Add to order →</button></div>
+        </div>
+
+        <div class="prod-card" data-cat="exterior" data-name="Car Shampoo" data-size="1 L" data-code="P-03" data-price="450">
+          <div class="prod-img-area"><div class="prod-img-meta"><span class="prod-code">P-03</span></div><div class="prod-img-center"><span class="prod-brand-wm">STRADA<br>DETAILS</span></div><span class="prod-cat-tag">Exterior</span></div>
+          <div class="prod-info"><h3 class="prod-name">CAR SHAMPOO</h3><p class="prod-desc">High-foam pH-neutral shampoo. Cleans without stripping wax or ceramic coatings.</p><span class="prod-size-line">1 L</span></div>
+          <div class="prod-foot"><span class="prod-price">Rs 450</span><button class="prod-add-btn add-to-cart">Add to order →</button></div>
+        </div>
+
+        <div class="prod-card" data-cat="exterior" data-name="Iron Remover" data-size="500 ml" data-code="P-10" data-price="580">
+          <div class="prod-img-area"><div class="prod-img-meta"><span class="prod-code">P-10</span></div><div class="prod-img-center"><span class="prod-brand-wm">STRADA<br>DETAILS</span></div><span class="prod-cat-tag">Exterior</span></div>
+          <div class="prod-info"><h3 class="prod-name">IRON REMOVER</h3><p class="prod-desc">Chemical decontaminant. Dissolves embedded iron particles and rail dust safely on contact.</p><span class="prod-size-line">500 ml</span></div>
+          <div class="prod-foot"><span class="prod-price">Rs 580</span><button class="prod-add-btn add-to-cart">Add to order →</button></div>
+        </div>
+
+        <div class="prod-card" data-cat="exterior" data-name="Tar and Glue Remover" data-size="400 ml" data-code="P-11" data-price="490">
+          <div class="prod-img-area"><div class="prod-img-meta"><span class="prod-code">P-11</span></div><div class="prod-img-center"><span class="prod-brand-wm">STRADA<br>DETAILS</span></div><span class="prod-cat-tag">Exterior</span></div>
+          <div class="prod-info"><h3 class="prod-name">TAR &amp; GLUE REMOVER</h3><p class="prod-desc">Safe solvent formula. Removes road tar, bitumen deposits and adhesive residue from paintwork.</p><span class="prod-size-line">400 ml</span></div>
+          <div class="prod-foot"><span class="prod-price">Rs 490</span><button class="prod-add-btn add-to-cart">Add to order →</button></div>
+        </div>
+
+        <div class="prod-card" data-cat="exterior" data-name="Clay Bar Kit" data-size="100g + lube" data-code="P-12" data-price="720">
+          <div class="prod-img-area"><div class="prod-img-meta"><span class="prod-code">P-12</span><span class="prod-badge">Bestseller</span></div><div class="prod-img-center"><span class="prod-brand-wm">STRADA<br>DETAILS</span></div><span class="prod-cat-tag">Exterior</span></div>
+          <div class="prod-info"><h3 class="prod-name">CLAY BAR KIT</h3><p class="prod-desc">Fine-grade detailing clay with lubricant spray. Removes surface contamination for a glass-smooth finish.</p><span class="prod-size-line">100 g + 200 ml lube</span></div>
+          <div class="prod-foot"><span class="prod-price">Rs 720</span><button class="prod-add-btn add-to-cart">Add to order →</button></div>
+        </div>
+
+        <div class="prod-card" data-cat="interior" data-name="Leather Conditioner" data-size="250 ml" data-code="P-13" data-price="850">
+          <div class="prod-img-area"><div class="prod-img-meta"><span class="prod-code">P-13</span><span class="prod-badge">Bestseller</span></div><div class="prod-img-center"><span class="prod-brand-wm">STRADA<br>DETAILS</span></div><span class="prod-cat-tag">Interior</span></div>
+          <div class="prod-info"><h3 class="prod-name">LEATHER CONDITIONER</h3><p class="prod-desc">Deep-penetrating conditioner for all leather types. Nourishes, prevents cracking, restores suppleness.</p><span class="prod-size-line">250 ml</span></div>
+          <div class="prod-foot"><span class="prod-price">Rs 850</span><button class="prod-add-btn add-to-cart">Add to order →</button></div>
+        </div>
+
+        <div class="prod-card" data-cat="interior" data-name="Interior Detailer Spray" data-size="500 ml" data-code="P-14" data-price="480">
+          <div class="prod-img-area"><div class="prod-img-meta"><span class="prod-code">P-14</span></div><div class="prod-img-center"><span class="prod-brand-wm">STRADA<br>DETAILS</span></div><span class="prod-cat-tag">Interior</span></div>
+          <div class="prod-info"><h3 class="prod-name">INTERIOR DETAILER</h3><p class="prod-desc">All-surface interior spray. Cleans dashboards, plastics and vinyl with a matt anti-static finish.</p><span class="prod-size-line">500 ml</span></div>
+          <div class="prod-foot"><span class="prod-price">Rs 480</span><button class="prod-add-btn add-to-cart">Add to order →</button></div>
+        </div>
+
+        <div class="prod-card" data-cat="interior" data-name="Fabric Cleaner" data-size="1 L" data-code="P-15" data-price="520">
+          <div class="prod-img-area"><div class="prod-img-meta"><span class="prod-code">P-15</span><span class="prod-badge new">New</span></div><div class="prod-img-center"><span class="prod-brand-wm">STRADA<br>DETAILS</span></div><span class="prod-cat-tag">Interior</span></div>
+          <div class="prod-info"><h3 class="prod-name">FABRIC CLEANER</h3><p class="prod-desc">Foam-action formula for seats, carpets and headliners. Lifts stains, deodorises and dries quickly.</p><span class="prod-size-line">1 L</span></div>
+          <div class="prod-foot"><span class="prod-price">Rs 520</span><button class="prod-add-btn add-to-cart">Add to order →</button></div>
+        </div>
+
+        <div class="prod-card" data-cat="interior" data-name="Odour Eliminator" data-size="300 ml" data-code="P-16" data-price="360">
+          <div class="prod-img-area"><div class="prod-img-meta"><span class="prod-code">P-16</span></div><div class="prod-img-center"><span class="prod-brand-wm">STRADA<br>DETAILS</span></div><span class="prod-cat-tag">Interior</span></div>
+          <div class="prod-info"><h3 class="prod-name">ODOUR ELIMINATOR</h3><p class="prod-desc">Enzyme-based odour neutraliser. Destroys bacteria at source — not just a cover scent.</p><span class="prod-size-line">300 ml</span></div>
+          <div class="prod-foot"><span class="prod-price">Rs 360</span><button class="prod-add-btn add-to-cart">Add to order →</button></div>
+        </div>
+
+        <div class="prod-card" data-cat="interior" data-name="Dashboard Protectant" data-size="200 ml" data-code="P-17" data-price="390">
+          <div class="prod-img-area"><div class="prod-img-meta"><span class="prod-code">P-17</span></div><div class="prod-img-center"><span class="prod-brand-wm">STRADA<br>DETAILS</span></div><span class="prod-cat-tag">Interior</span></div>
+          <div class="prod-info"><h3 class="prod-name">DASHBOARD PROTECTANT</h3><p class="prod-desc">UV-blocking formula for plastics and rubber. Prevents fading, cracking and colour loss.</p><span class="prod-size-line">200 ml</span></div>
+          <div class="prod-foot"><span class="prod-price">Rs 390</span><button class="prod-add-btn add-to-cart">Add to order →</button></div>
+        </div>
+
+        <div class="prod-card" data-cat="tools" data-name="Microfibre Kit" data-size="Pack of 5" data-code="P-04" data-price="350">
+          <div class="prod-img-area"><div class="prod-img-meta"><span class="prod-code">P-04</span><span class="prod-badge limited">Limited</span></div><div class="prod-img-center"><span class="prod-brand-wm">STRADA<br>DETAILS</span></div><span class="prod-cat-tag">Tools</span></div>
+          <div class="prod-info"><h3 class="prod-name">MICROFIBRE KIT</h3><p class="prod-desc">Ultra-soft 400 GSM microfibre cloths — paint-safe, scratch-free. For drying and buffing.</p><span class="prod-size-line">Pack of 5</span></div>
+          <div class="prod-foot"><span class="prod-price">Rs 350</span><button class="prod-add-btn add-to-cart">Add to order →</button></div>
+        </div>
+
+        <div class="prod-card" data-cat="tools" data-name="Foam Applicator Pads" data-size="Pack of 6" data-code="P-18" data-price="220">
+          <div class="prod-img-area"><div class="prod-img-meta"><span class="prod-code">P-18</span></div><div class="prod-img-center"><span class="prod-brand-wm">STRADA<br>DETAILS</span></div><span class="prod-cat-tag">Tools</span></div>
+          <div class="prod-info"><h3 class="prod-name">FOAM APPLICATOR PADS</h3><p class="prod-desc">High-density foam pads for hand application of waxes and sealants. Even product distribution.</p><span class="prod-size-line">Pack of 6</span></div>
+          <div class="prod-foot"><span class="prod-price">Rs 220</span><button class="prod-add-btn add-to-cart">Add to order →</button></div>
+        </div>
+
+        <div class="prod-card" data-cat="tools" data-name="Detailing Brush Set" data-size="Set of 4" data-code="P-19" data-price="480">
+          <div class="prod-img-area"><div class="prod-img-meta"><span class="prod-code">P-19</span><span class="prod-badge new">New</span></div><div class="prod-img-center"><span class="prod-brand-wm">STRADA<br>DETAILS</span></div><span class="prod-cat-tag">Tools</span></div>
+          <div class="prod-info"><h3 class="prod-name">DETAILING BRUSH SET</h3><p class="prod-desc">Professional detailing brushes — various sizes for vents, trim, emblems and tight crevices.</p><span class="prod-size-line">Set of 4</span></div>
+          <div class="prod-foot"><span class="prod-price">Rs 480</span><button class="prod-add-btn add-to-cart">Add to order →</button></div>
+        </div>
+
+        <div class="prod-card" data-cat="tools" data-name="Drying Towel XL" data-size="60x90cm" data-code="P-20" data-price="420">
+          <div class="prod-img-area"><div class="prod-img-meta"><span class="prod-code">P-20</span></div><div class="prod-img-center"><span class="prod-brand-wm">STRADA<br>DETAILS</span></div><span class="prod-cat-tag">Tools</span></div>
+          <div class="prod-info"><h3 class="prod-name">DRYING TOWEL XL</h3><p class="prod-desc">Twisted-loop 600 GSM towel. Absorbs water rapidly — streak-free drying in one pass.</p><span class="prod-size-line">60 × 90 cm</span></div>
+          <div class="prod-foot"><span class="prod-price">Rs 420</span><button class="prod-add-btn add-to-cart">Add to order →</button></div>
+        </div>
+
+        <div class="prod-card" data-cat="tools" data-name="Spray Bottle Set" data-size="3x500ml" data-code="P-21" data-price="280">
+          <div class="prod-img-area"><div class="prod-img-meta"><span class="prod-code">P-21</span></div><div class="prod-img-center"><span class="prod-brand-wm">STRADA<br>DETAILS</span></div><span class="prod-cat-tag">Tools</span></div>
+          <div class="prod-info"><h3 class="prod-name">SPRAY BOTTLE SET</h3><p class="prod-desc">Chemical-resistant HDPE bottles with adjustable nozzles. Ideal for diluting and applying products.</p><span class="prod-size-line">Pack of 3 × 500 ml</span></div>
+          <div class="prod-foot"><span class="prod-price">Rs 280</span><button class="prod-add-btn add-to-cart">Add to order →</button></div>
+        </div>
+
+        <div class="prod-card prod-card--bundle" data-cat="bundles" data-name="Starter Detail Bundle" data-size="5-product kit" data-code="B-01" data-price="1750">
+          <div class="prod-img-area"><div class="prod-img-meta"><span class="prod-code">B-01</span><span class="prod-badge">Best Value</span></div><div class="prod-img-center"><span class="prod-brand-wm">STRADA<br>DETAILS</span></div><span class="prod-cat-tag">Bundle</span></div>
+          <div class="prod-info"><h3 class="prod-name">STARTER BUNDLE</h3><p class="prod-desc">Car Shampoo + Spray Detailer + Microfibre Kit + Foam Pads + Tyre Dressing. Everything to begin detailing right.</p><span class="prod-size-line">5-product kit</span></div>
+          <div class="prod-foot"><span class="prod-price">Rs 1,750 <span class="prod-was">Rs 2,150</span></span><button class="prod-add-btn add-to-cart">Add to order →</button></div>
+        </div>
+
+        <div class="prod-card prod-card--bundle" data-cat="bundles" data-name="Protection Pro Bundle" data-size="3-product kit" data-code="B-02" data-price="2950">
+          <div class="prod-img-area"><div class="prod-img-meta"><span class="prod-code">B-02</span><span class="prod-badge">Bestseller</span></div><div class="prod-img-center"><span class="prod-brand-wm">STRADA<br>DETAILS</span></div><span class="prod-cat-tag">Bundle</span></div>
+          <div class="prod-info"><h3 class="prod-name">PROTECTION PRO BUNDLE</h3><p class="prod-desc">Ceramic Coating Kit + Paint Sealant + Glass Coating. Complete paint and glass protection.</p><span class="prod-size-line">3-product kit</span></div>
+          <div class="prod-foot"><span class="prod-price">Rs 2,950 <span class="prod-was">Rs 3,400</span></span><button class="prod-add-btn add-to-cart">Add to order →</button></div>
+        </div>
+
+        <div class="prod-card prod-card--bundle" data-cat="bundles" data-name="Interior Complete Bundle" data-size="4-product kit" data-code="B-03" data-price="1890">
+          <div class="prod-img-area"><div class="prod-img-meta"><span class="prod-code">B-03</span><span class="prod-badge new">New</span></div><div class="prod-img-center"><span class="prod-brand-wm">STRADA<br>DETAILS</span></div><span class="prod-cat-tag">Bundle</span></div>
+          <div class="prod-info"><h3 class="prod-name">INTERIOR COMPLETE BUNDLE</h3><p class="prod-desc">Leather Conditioner + Interior Detailer + Fabric Cleaner + Odour Eliminator. Showroom interior, guaranteed.</p><span class="prod-size-line">4-product kit</span></div>
+          <div class="prod-foot"><span class="prod-price">Rs 1,890 <span class="prod-was">Rs 2,250</span></span><button class="prod-add-btn add-to-cart">Add to order →</button></div>
         </div>
 
       </div>
+
+      <div class="prod-empty" id="prodEmpty" style="display:none">
+        <span class="prod-empty-icon">—</span>
+        <p>No products in this category.</p>
+      </div>
+
     </div>
 
     <!-- ── CART DRAWER ──────────────────────────────────── -->
