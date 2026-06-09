@@ -217,8 +217,14 @@ viewMoreBtn.addEventListener('click', () => {
 });
 
 viewLessBtn.addEventListener('click', () => {
+  // Anchor: keep the filter bar at the same visual Y position after collapse
+  const filterBar = document.querySelector('.prod-filter-bar');
+  const anchorBefore = filterBar.getBoundingClientRect().top;
   visibleCount = PAGE_SIZE;
   applyPagination();
+  // Instantly correct scroll so filter bar doesn't move on screen
+  const anchorAfter = filterBar.getBoundingClientRect().top;
+  window.scrollBy(0, anchorAfter - anchorBefore);
 });
 
 // Init
