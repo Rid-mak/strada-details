@@ -135,14 +135,8 @@ nav.stuck .nav-inner { padding: 14px 0; }
   letter-spacing: .15em; text-transform: uppercase;
   padding: 10px 24px; background: var(--gold); color: var(--void);
   transition: background .2s;
-  display: flex; flex-direction: row; align-items: center; gap: 9px;
 }
 .nav-book:hover { background: var(--text); }
-.nav-book-icon {
-  width: 16px; height: 16px; stroke: var(--void); flex-shrink: 0;
-  transition: transform .3s var(--ease);
-}
-.nav-book:hover .nav-book-icon { transform: translateX(-2px); }
 
 .ham {
   display: none; flex-direction: column; gap: 5px;
