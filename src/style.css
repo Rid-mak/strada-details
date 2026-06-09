@@ -1286,7 +1286,14 @@ footer { background: var(--rock); }
 
   /* ── SHARED ── */
   .chip { font-size: 10px; letter-spacing: .16em; margin-bottom: 18px; }
-  .big-head { font-size: 8.5vw; line-height: .94; margin-bottom: 16px; word-break: break-word; }
+  .big-head {
+    font-size: 7.5vw;
+    line-height: 1;
+    margin-bottom: 16px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+  }
   .section { padding: 56px 18px; }
 
   /* ── SERVICES ── */
@@ -1362,11 +1369,11 @@ footer { background: var(--rock); }
   .cart-checkout    { font-size: 12px; padding: 14px 20px; }
 
   /* ── ABOUT ── */
-  #about { padding: 56px 18px; }
-  .about-inner { grid-template-columns: 1fr; }
-  .about-left  { padding-right: 0; border-right: none; border-bottom: 1px solid var(--border); padding-bottom: 36px; }
-  .about-right { padding-left: 0; padding-top: 36px; }
-  .about-body  { font-size: 14px; line-height: 1.8; }
+  #about { padding: 56px 18px; overflow: hidden; }
+  .about-inner { display: block; width: 100%; max-width: 100%; }
+  .about-left  { padding-right: 0; border-right: none; border-bottom: 1px solid var(--border); padding-bottom: 36px; max-width: 100%; overflow: hidden; }
+  .about-right { padding-left: 0; padding-top: 36px; max-width: 100%; }
+  .about-body  { font-size: 14px; line-height: 1.8; max-width: 100%; overflow-wrap: break-word; }
   .about-sig   { font-size: 18px; margin-top: 24px; }
   .about-meta  { font-size: 11px; letter-spacing: .12em; }
 
@@ -1385,19 +1392,24 @@ footer { background: var(--rock); }
   .p-desc  { font-size: 13px; line-height: 1.75; }
 
   /* ── CTA ── */
-  #cta { padding: 56px 18px; }
-  .cta-inner { grid-template-columns: 1fr; gap: 0; }
-  .cta-left  { padding-right: 0; border-right: none; border-bottom: 1px solid var(--border); padding-bottom: 36px; }
-  .cta-right { padding-left: 0; padding-top: 36px; display: flex; flex-direction: column; gap: 18px; }
+  #cta { padding: 56px 18px; overflow: hidden; }
+  .cta-inner { display: block; width: 100%; max-width: 100%; }
+  .cta-left  { padding-right: 0; border-right: none; border-bottom: 1px solid var(--border); padding-bottom: 36px; max-width: 100%; overflow: hidden; }
+  .cta-right { padding-left: 0; padding-top: 36px; display: flex; flex-direction: column; gap: 18px; max-width: 100%; }
   .btn-wa {
-    width: 100%; justify-content: center;
-    padding: 15px 16px;
-    font-size: 12px; letter-spacing: .1em;
-    white-space: nowrap; overflow: hidden;
+    display: flex;
+    width: 100%;
+    max-width: 100%;
     box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 14px;
+    font-size: 12px;
+    letter-spacing: .08em;
   }
   .btn-wa svg { width: 18px; height: 18px; flex-shrink: 0; }
-  .cta-meta { font-size: 12px; letter-spacing: .12em; line-height: 1.8; }
+  .cta-meta { font-size: 12px; letter-spacing: .1em; line-height: 1.8; max-width: 100%; }
 
   /* ── FOOTER ── */
   .foot-col    { padding: 28px 18px; }
