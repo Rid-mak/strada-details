@@ -222,10 +222,31 @@ nav.stuck .nav-inner { padding: 14px 0; }
 }
 .hero-vid {
   position: absolute; inset: 0; width: 100%; height: 100%;
-  object-fit: cover; opacity: 0; z-index: 1;
+  object-fit: cover; object-position: center center;
+  opacity: 0; z-index: 1;
   transition: opacity 1.8s var(--ease);
 }
 .hero-vid.on { opacity: 1; }
+
+@media(max-width:768px) {
+  .hero-vid {
+    /* landscape video on portrait screen — anchor to top so car stays visible */
+    object-position: center 30%;
+    width: 100%;
+    height: 100%;
+    min-height: 100svh;
+  }
+  .hero-vids {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  #hero {
+    min-height: 100svh;
+    height: 100svh;
+  }
+}
 .hero-ov {
   position: absolute; inset: 0; z-index: 2;
   background: linear-gradient(to bottom, rgba(7,7,10,.1) 0%, rgba(7,7,10,.05) 35%, rgba(7,7,10,.5) 75%, rgba(7,7,10,.92) 100%);
