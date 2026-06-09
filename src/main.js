@@ -216,10 +216,26 @@ viewMoreBtn.addEventListener('click', () => {
   if (nextCard) nextCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 });
 
+function smoothScrollTo(targetY, duration) {
+  const startY = window.scrollY;
+  const diff   = targetY - startY;
+  let start    = null;
+  function ease(t) { return t < .5 ? 2*t*t : -1+(4-2*t)*t; }
+  function step(ts) {
+    if (!start) start = ts;
+    const elapsed = Math.min((ts - start) / duration, 1);
+    window.scrollTo(0, startY + diff * ease(elapsed));
+    if (elapsed < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
 viewLessBtn.addEventListener('click', () => {
   visibleCount = PAGE_SIZE;
   applyPagination();
-  document.getElementById('products').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const target = document.getElementById('products');
+  const top = target.getBoundingClientRect().top + window.scrollY - 80;
+  smoothScrollTo(top, 900);
 });
 
 // Init
